@@ -19,7 +19,6 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        taskTemplateRepository.deleteAll();
         if (userRepository.count() == 0) {
             User mom = new User("אמא", "PARENT");
             User dad = new User("אבא", "PARENT");
