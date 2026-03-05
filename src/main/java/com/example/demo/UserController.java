@@ -4,10 +4,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*")
+
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin(origins = "http://localhost:5173") // נשנה לפי הפורט של React אחר כך
 public class UserController {
 
     private final UserRepository userRepository;
