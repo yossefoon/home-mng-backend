@@ -1,13 +1,20 @@
 # Build stage
-FROM gradle:8.7-jdk17 AS build
+FROM eclipse-temurin:17-jdk AS build
 WORKDIR /app
+
 COPY . .
-RUN gradle clean build -x test
+
+# Ensure wrapper is executable (Linux)
+RUN chmod +x gradlew
+
+# Build using the project's Gradle Wrapper
+RUN ./gradlew clean build -x test --no-daemon --stacktrace
 
 # Run stage
 FROM eclipse-temurin:17-jre
 WORKDIR /app
 COPY --from=build /app/build/libs/*.jar app.jar
-EXPOSE 8080
+
 ENV PORT=8080
+EXPOSE 8080
 CMD ["sh", "-c", "java -jar app.jar --server.port=${PORT}"]
