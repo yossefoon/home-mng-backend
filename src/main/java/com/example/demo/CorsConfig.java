@@ -16,8 +16,7 @@ public class CorsConfig {
                 registry.addMapping("/api/**")
                         .allowedOrigins(
                                 "http://localhost:5173",
-                                "http://localhost:3000"
-                                // אחרי שתפרוס את ה-frontend, נוסיף פה גם את דומיין Vercel
+                                "https://home-mng-frontend.vercel.app"
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*");
