@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/users")
 @CrossOrigin(origins = "http://localhost:5173") // נשנה לפי הפורט של React אחר כך

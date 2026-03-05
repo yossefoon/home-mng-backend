@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.*;
 import java.util.*;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/points")
 @CrossOrigin(origins = "http://localhost:5173")
